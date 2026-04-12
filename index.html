@@ -9,6 +9,41 @@
   <meta property="og:title" content="Loggd — Log anything. See everything.">
   <meta property="og:description" content="The simplest personal event tracker. One tap to log, beautiful charts to see patterns.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://loggd-app.github.io/">
+  <meta property="og:image" content="https://loggd-app.github.io/og-image.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Loggd">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Loggd — Log anything. See everything.">
+  <meta name="twitter:description" content="The simplest personal event tracker. One tap to log, beautiful charts to see patterns.">
+  <meta name="twitter:image" content="https://loggd-app.github.io/og-image.png">
+  <link rel="canonical" href="https://loggd-app.github.io/">
+  <link rel="alternate" hreflang="en" href="https://loggd-app.github.io/">
+  <link rel="alternate" hreflang="de" href="https://loggd-app.github.io/de/">
+  <link rel="alternate" hreflang="x-default" href="https://loggd-app.github.io/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0A0A'/%3E%3Ccircle cx='50' cy='50' r='8' fill='white'/%3E%3Ccircle cx='35' cy='35' r='4' fill='%23E88B8B' opacity='0.8'/%3E%3Ccircle cx='65' cy='35' r='3.5' fill='%237CC5D9' opacity='0.8'/%3E%3Ccircle cx='35' cy='65' r='3' fill='%239B7EC8' opacity='0.8'/%3E%3Ccircle cx='65' cy='65' r='4' fill='%23E8A87C' opacity='0.8'/%3E%3Ccircle cx='50' cy='28' r='2.5' fill='%237CBFA3' opacity='0.7'/%3E%3Ccircle cx='28' cy='50' r='3' fill='%236BADC4' opacity='0.7'/%3E%3Ccircle cx='72' cy='50' r='2.5' fill='%23BFA0D1' opacity='0.7'/%3E%3Ccircle cx='50' cy='72' r='3' fill='%23E8D17C' opacity='0.7'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="https://loggd-app.github.io/apple-touch-icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Loggd",
+    "description": "The simplest personal event tracker. One tap to log, beautiful charts to see your patterns. Privacy-first. No account needed.",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": [
+      { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free with up to 3 categories" },
+      { "@type": "Offer", "price": "3.00", "priceCurrency": "CHF", "description": "Premium Monthly" },
+      { "@type": "Offer", "price": "20.00", "priceCurrency": "CHF", "description": "Premium Yearly" },
+      { "@type": "Offer", "price": "50.00", "priceCurrency": "CHF", "description": "Premium Lifetime" }
+    ],
+    "installUrl": "https://apps.apple.com/app/loggd-log-anything/id6761208921",
+    "url": "https://loggd-app.github.io/",
+    "image": "https://loggd-app.github.io/og-image.png",
+    "softwareVersion": "1.0.6",
+    "author": { "@type": "Organization", "name": "Loggd" }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,6 +167,39 @@
 
     .nav-cta:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,255,255,0.15); }
 
+    /* ===== Language Switcher ===== */
+    .lang-switch {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .lang-switch a {
+      font-size: 11px !important;
+      font-weight: 600 !important;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .lang-switch a.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary) !important;
+    }
+
+    .lang-switch a:not(.active) {
+      color: var(--text-secondary) !important;
+    }
+
+    .lang-switch a:not(.active):hover {
+      color: var(--text-primary) !important;
+    }
+
     /* ===== Hero ===== */
     .hero {
       position: relative;
@@ -162,23 +230,28 @@
       animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
     }
 
-    .hero-icon {
-      width: 160px;
-      height: 160px;
-      border-radius: 28px;
-      margin-bottom: 28px;
-      opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    .hero-badge .badge-pill {
+      background: rgba(124, 191, 163, 0.15);
+      color: var(--sage);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: 0.04em;
     }
 
-    .hero-wordmark {
-      font-size: clamp(48px, 8vw, 80px);
+    .hero h1 {
+      font-size: clamp(52px, 9vw, 110px);
       font-weight: 800;
-      letter-spacing: -2.5px;
-      margin-bottom: 16px;
+      letter-spacing: -4px;
+      line-height: 0.92;
+      margin-bottom: 28px;
       opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    }
+
+    .hero h1 .accent {
+      color: var(--text-secondary);
     }
 
     .hero-tagline {
@@ -189,7 +262,7 @@
       margin-bottom: 56px;
       line-height: 1.7;
       opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
     }
 
     .hero-actions {
@@ -198,7 +271,7 @@
       flex-wrap: wrap;
       justify-content: center;
       opacity: 0;
-      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
+      animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
     }
 
     .store-btn {
@@ -1045,7 +1118,7 @@
 
     @media (max-width: 768px) {
       nav { padding: 10px 10px 10px 22px; gap: 20px; top: 10px; }
-      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-links > a:not(.nav-cta) { display: none; }
       .features-grid { grid-template-columns: 1fr; }
       .store-btn { padding: 14px 24px; font-size: 14px; }
       .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
@@ -1071,15 +1144,22 @@
       <a href="#features">Features</a>
       <a href="#insights">Insights</a>
       <a href="#privacy">Privacy</a>
+      <div class="lang-switch">
+        <a href="./" class="active">EN</a>
+        <a href="./de/">DE</a>
+      </div>
       <a href="https://apps.apple.com/app/loggd-log-anything/id6761208921" class="nav-cta" target="_blank" rel="noopener">Download</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <img src="/icon.png" alt="Loggd" class="hero-icon">
-    <div class="hero-wordmark">Loggd</div>
-    <p class="hero-tagline">Log anything. See everything.</p>
+    <div class="hero-badge">
+      Available on iOS &amp; Android
+      <span class="badge-pill">v1.0.6</span>
+    </div>
+    <h1>Log anything.<br>See everything.</h1>
+    <p class="hero-tagline">One tap to capture any moment. Beautiful charts to reveal your patterns. All data stays on your device.</p>
     <div class="hero-actions">
       <a href="https://apps.apple.com/app/loggd-log-anything/id6761208921" class="store-btn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -1115,7 +1195,7 @@
               <span class="hint-text"><strong>Tap</strong> to log instantly</span>
             </div>
             <div class="hint-card">
-              <div class="hint-icon" style="background: rgba(155,126,200,0.1);">✊</div>
+              <div class="hint-icon" style="background: rgba(155,126,200,0.1);">👆👆</div>
               <span class="hint-text"><strong>Long press</strong> to backdate</span>
             </div>
             <div class="hint-card">
@@ -1244,15 +1324,15 @@
           <div class="insight-cards reveal reveal-delay-3">
             <div class="insight-card">
               <span class="insight-emoji">🔗</span>
-              <span class="insight-text"><strong>Correlations</strong> — Headaches and stress occur on the same day in 82% of cases</span>
+              <span class="insight-text"><strong>Correlations</strong> — Medication &amp; Training appear on the same day in 87% of cases</span>
             </div>
             <div class="insight-card">
               <span class="insight-emoji">⚡</span>
-              <span class="insight-text"><strong>Triggers</strong> — After poor sleep, headaches follow the next day in 67% of cases</span>
+              <span class="insight-text"><strong>Triggers</strong> — After Training, Coffee follows the next day in 87% of cases</span>
             </div>
             <div class="insight-card">
               <span class="insight-emoji">📈</span>
-              <span class="insight-text"><strong>Trends</strong> — Bad mood: 2.4x more on weekends. Most logged on Sundays. Accelerating.</span>
+              <span class="insight-text"><strong>Trends</strong> — Coffee is up 12% this week. Most logged on Mondays.</span>
             </div>
           </div>
         </div>
@@ -1303,7 +1383,7 @@
         <div class="privacy-item reveal reveal-delay-2">
           <span class="privacy-icon">🚫</span>
           <h4>No Tracking</h4>
-          <p>Zero analytics. Zero telemetry. Zero ads.</p>
+          <p>No user analytics. No ads. Only anonymous crash reports to fix bugs.</p>
         </div>
         <div class="privacy-item reveal reveal-delay-3">
           <span class="privacy-icon">🔑</span>
@@ -1342,12 +1422,13 @@
     <div class="footer-inner">
       <div class="footer-left">
         <span class="footer-logo">Loggd</span>
-        <span class="footer-copy">&copy; 2026 Loggd. All rights reserved.</span>
+        <span class="footer-copy">&copy; 2024&ndash;2026 Loggd. All rights reserved.</span>
       </div>
       <div class="footer-links">
         <a href="https://loggd-app.github.io/loggd-legal/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
         <a href="https://loggd-app.github.io/loggd-legal/terms.html" target="_blank" rel="noopener">Terms of Service</a>
         <a href="https://loggd-app.github.io/loggd-legal/impressum.html" target="_blank" rel="noopener">Imprint</a>
+        <a href="./de/">Deutsch</a>
       </div>
     </div>
   </footer>
