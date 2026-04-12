@@ -217,6 +217,7 @@
     .hero-brand {
       display: flex;
       align-items: center;
+      overflow: visible;
       gap: 24px;
       margin-bottom: 32px;
       opacity: 0;
@@ -236,8 +237,10 @@
       font-size: clamp(56px, 8vw, 96px);
       font-weight: 800;
       letter-spacing: -3px;
-      line-height: 1.15;
-      padding-bottom: 0.1em;
+      line-height: 1.2;
+      padding-bottom: 0.15em;
+      display: inline-block;
+      overflow: visible;
       background: linear-gradient(135deg, #fff 60%, var(--sage));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
